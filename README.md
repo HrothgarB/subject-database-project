@@ -33,6 +33,7 @@ Android Studio run tips:
 - Emulator: keep `SUBJECT_API_BASE_URL` set to `http://10.0.2.2:8000/api`.
 - Physical device: point `SUBJECT_API_BASE_URL` at your computer's LAN IP, such as `http://192.168.1.20:8000/api`.
 - In the Run/Debug Configuration, add the same value under additional Dart defines if you are launching from Android Studio instead of the terminal.
+- If you import the bundled IDE configs, use `main.dart` for emulator runs and `physical-device` for a phone or tablet on your Wi-Fi network.
 
 ## Local Development Setup
 
