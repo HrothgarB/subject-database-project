@@ -16,7 +16,6 @@ class DemoData {
       notes: 'Known associate in a recurring property-theft investigation.',
       caseNumber: 'CASE-2048',
       intelNumber: 'INT-7781',
-      restrictedSsn: '***-**-1084',
       dob: DateTime(1991, 4, 12),
     ),
     SubjectProfile(
@@ -30,7 +29,6 @@ class DemoData {
       notes: 'Frequent contact point for field interviews. Low confidence risk flag.',
       caseNumber: 'CASE-2210',
       intelNumber: 'INT-8823',
-      restrictedSsn: '***-**-4472',
       dob: DateTime(1987, 9, 3),
     ),
     SubjectProfile(
@@ -44,7 +42,6 @@ class DemoData {
       notes: 'Subject profile used for encounter workflow and offline sync preview.',
       caseNumber: 'CASE-2294',
       intelNumber: 'INT-9014',
-      restrictedSsn: '***-**-2208',
       dob: DateTime(1995, 1, 28),
     ),
   ];
@@ -148,7 +145,6 @@ class DemoData {
       notes: payload['notes'] as String?,
       caseNumber: payload['case_number'] as String?,
       intelNumber: payload['intel_number'] as String?,
-      restrictedSsn: payload['restricted_ssn'] as String?,
       dob: payload['dob'] == null ? null : DateTime.tryParse(payload['dob'] as String),
     );
     _subjects.insert(0, newSubject);
@@ -173,7 +169,6 @@ class DemoData {
       notes: payload['notes'] as String? ?? current.notes,
       caseNumber: payload['case_number'] as String? ?? current.caseNumber,
       intelNumber: payload['intel_number'] as String? ?? current.intelNumber,
-      restrictedSsn: payload['restricted_ssn'] as String? ?? current.restrictedSsn,
       dob: payload['dob'] == null ? current.dob : DateTime.tryParse(payload['dob'] as String),
     );
     _subjects[index] = updated;

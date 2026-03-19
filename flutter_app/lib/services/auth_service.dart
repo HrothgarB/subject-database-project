@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../core/api_config.dart';
+
 class AuthService {
   AuthService._();
 
   static final AuthService instance = AuthService._();
   static const _storage = FlutterSecureStorage();
-  final Dio _dio = Dio(BaseOptions(baseUrl: 'https://internal-api.example/api'));
+  final Dio _dio = Dio(BaseOptions(baseUrl: ApiConfig.baseUrl));
 
   Future<void> login(String email, String password) async {
     final response = await _dio.post<Map<String, dynamic>>(

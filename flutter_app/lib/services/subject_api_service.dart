@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../core/api_config.dart';
 import '../models/subject_profile.dart';
 import 'auth_service.dart';
 
@@ -7,7 +8,7 @@ class SubjectApiService {
   SubjectApiService._();
 
   static final SubjectApiService instance = SubjectApiService._();
-  final Dio _dio = Dio(BaseOptions(baseUrl: 'https://internal-api.example/api'));
+  final Dio _dio = Dio(BaseOptions(baseUrl: ApiConfig.baseUrl));
 
   Future<List<SubjectProfile>> fetchSubjects({String? query}) async {
     final token = await AuthService.instance.getAccessToken();
